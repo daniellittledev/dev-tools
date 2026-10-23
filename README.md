@@ -6,6 +6,7 @@ Tools for development with Claude Code.
 
 | Skill | What it does |
 |---|---|
+| [`adr`](skills/adr/SKILL.md) | Records an architecture decision as a short, lasting record: the forces behind it, the decision as a rule later changes can be checked against, the alternatives turned down and why, and the consequences accepted. Follows the repository's existing records and supersedes old ones when a decision changes. |
 | [`lens-review`](skills/lens-review/SKILL.md) | Property-lens code review. Reads the PR's intent, picks a General lens plus up to three families from a fixed [catalogue](skills/lens-review/catalogue.md) of 62 properties, reviews through each with design first (tracing symptoms back to their design cause and proposing the improvement), verifies every finding against the code it cites, and reports only what survives. |
 | [`pr`](skills/pr/SKILL.md) | Opens a pull request, or rewrites an existing description, for a reviewer reading cold: plain high-level language, the why behind the change, and the key design decisions with their reasons and the alternatives turned down. |
 
