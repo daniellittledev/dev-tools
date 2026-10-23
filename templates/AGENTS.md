@@ -23,8 +23,5 @@
 
 - Prefer PowerShell (`pwsh`) for scripts.
 - For large tasks, write a script to accomplish the task rather than performing steps manually.
-- Run the build, tests and linter before calling a task done, and report failures honestly.
-- Follow the existing conventions of a codebase when they conflict with these preferences.
 - Ask before adding dependencies, changing public APIs, or reformatting unrelated code.
-- Ask when a requirement is ambiguous, otherwise act without seeking confirmation on routine steps.
 - Suggest an alternative if there is a better way.
