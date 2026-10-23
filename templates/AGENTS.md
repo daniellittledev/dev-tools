@@ -1,6 +1,6 @@
 # User Preferences
 
-- CLAUDE.md files should be brief and concise.
+- When writing or editing CLAUDE.md or AGENTS.md files, keep them brief and concise.
 - Prefer PowerShell (`pwsh`) for scripts.
 - NEVER wrap lines in commit messages or PR descriptions.
 - Write commit messages and PR descriptions in high level language, include context on why the change was made.
