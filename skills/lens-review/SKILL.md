@@ -95,7 +95,7 @@ Verify **each finding alone** by opening the lines it cites. Do not let the numb
 - **Delete** a finding that does not stand. Do not soften it into advice.
 - **Lower** severity when the path is real but narrower than claimed. **Never raise** it.
 - A finding whose cited code you cannot open stays at most `low` and says so.
-- A design finding stands when the shape is in the cited code **and** its cost is traced: a symptom that survived the judge, or a concrete next change shown to need edits in more than one place. Delete it when the cost is only preference. Judge its proposed improvement too: drop the proposal, and keep the finding, if the proposal would not compile against the types you read or would break a caller you found.
+- A design finding stands when the shape is in the cited code **and** its cost is traced: a symptom that survived the judge, or a concrete next change shown to need edits in more than one place. Delete it when the cost is only preference. Judge its proposed improvement too: drop the proposal, and keep the finding, if the proposal contradicts the types you read or would break a caller you found.
 
 ## 6. Output
 
