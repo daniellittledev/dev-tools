@@ -75,7 +75,7 @@ A design finding also carries **the improvement**: the specific shape that remov
 
 Two traps the catalogue's notes expand on: structural properties fire on what the change **moved**, never on a level the code was already at; and an exclusion must not demand evidence a diff cannot hold (a queue consumer is evidence of redelivery without a retry loop in sight).
 
-**Fan-out.** Launch one subagent per family in a single message so they run in parallel. Give each an identical brief: the intent, which instruction files to read, the diff or how to get it, the Rules section above verbatim, and the four moves; then its family's properties with their questions, last. `General` has no properties: its brief carries the mechanisms table from `catalogue.md`, exclusions included. Ask for findings as: `file:line`, property, one-sentence defect, failure scenario, proposed severity, and the lines cited. An empty list is a valid answer.
+**Fan-out.** Launch one subagent per family in a single message so they run in parallel. Give each an identical brief: the intent, which instruction files to read, the diff or how to get it, the Rules section above verbatim, and the four moves; then its family's properties with their questions, last. `General` has no properties: its brief carries the mechanisms table from `catalogue.md`, exclusions included. Ask for findings as: a short title, property, proposed severity, `file:line`, one-sentence defect, failure scenario, fix, and the lines cited. An empty list is a valid answer.
 
 **Inline** (`--inline`, or a change under ~150 changed lines with at most one family beside `General`): ask the lenses yourself in sequence. Same questions, same output shape.
 
@@ -101,14 +101,26 @@ Verify **each finding alone** by opening the lines it cites. Do not let the numb
 
 Open with the selection table, then one line: how many findings survived of how many proposed.
 
-Then the findings, ranked by severity then consequence, numbered:
+Then the findings, ranked by severity then consequence, numbered, each in this order:
 
-- **`file:line`** · `Family/Property` · severity
-- What is wrong and what it costs, in one plain sentence.
-- **Scenario:** the input or state, the path, the wrong result.
-- **Fix:** one sentence, when the fix is clear. For a design finding, **Improvement:** the proposed shape, as a short sketch if it helps, and the properties it improves.
-- Symptoms: the findings it causes, by number, if any.
-- Corroborated by: other families, if any.
+```markdown
+### 1. <Short title: the defect in a few words>
+
+`Family/Property` · **severity**
+
+**Location:** `file:line`
+
+What is wrong and what it costs, in one plain sentence.
+
+**Scenario:** the input or state, the path, the wrong result.
+
+**Fix:** one sentence, when the fix is clear.
+```
+
+- **Title** names the defect, not the property: "Retry double-charges the card", not "Idempotency issue".
+- **Location** lists every cited `file:line`, comma-separated, primary first.
+- For a design finding, **Improvement:** replaces **Fix:**: the proposed shape, as a short sketch if it helps, and the properties it improves.
+- After the fix, when any: **Symptoms:** the findings it causes, by number; **Corroborated by:** other families.
 
 When a design finding and its symptoms tie on severity, list the design finding first: it is the fix with the most reach.
 
