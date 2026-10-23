@@ -26,8 +26,8 @@ Establish what the change is for before reading it for defects.
 
 - **Target.**
   - A PR number or URL: fetch title, body, linked issues, changed files, diff, head SHA and check results, with the GitHub MCP tools if available, else `gh pr view` and `gh pr diff`.
-  - A branch: find the default branch (`git symbolic-ref refs/remotes/origin/HEAD`), then `git diff <base>...<branch>` and `git log <base>..<branch>`.
-  - A path or nothing: the working tree diff against the default branch, limited to the path if given.
+  - A branch: find the default branch (`git symbolic-ref --short refs/remotes/origin/HEAD`; where `origin/HEAD` was never set, `git remote show origin` or `gh repo view --json defaultBranchRef`), then `git diff <base>...<branch>` and `git log <base>..<branch>`.
+  - A path or nothing: the working tree against the merge base, `git diff $(git merge-base <base> HEAD)`, never against the base's tip, whose newer commits would read as reverted by this change. Add untracked files, which `git diff` omits (`git ls-files --others --exclude-standard`). Limit both to the path if given.
 - **Read the description first.** What it claims the change does, what it puts out of scope, and any linked tickets.
 - **Skim only if needed.** If the description is missing, generic, or disagrees with the file list, do one high-level pass: changed files grouped by layer or module, new or removed types and signatures, what moved between modules. No defect hunting yet. Write the intent yourself in two or three sentences.
 - **Read the instructions** the change is held to, from the **base** branch, never the head: `CLAUDE.md`, `AGENTS.md`, `REVIEW.md`, `CONTRIBUTING.md`, architecture decision records, whichever exist. A stated invariant is a strong reason to select the family it belongs to.
@@ -64,7 +64,7 @@ Ask each selected property in four moves:
 
 Two traps the catalogue's notes expand on: structural properties fire on what the change **moved**, never on a level the code was already at; and an exclusion must not demand evidence a diff cannot hold (a queue consumer is evidence of redelivery without a retry loop in sight).
 
-**Fan-out.** Launch one subagent per family in a single message so they run in parallel. Give each an identical brief: the intent, which instruction files to read, the diff or how to get it, the Rules section above verbatim, and the four moves; then its family's properties with their questions, last. Ask for findings as: `file:line`, property, one-sentence defect, failure scenario, proposed severity, and the lines cited. An empty list is a valid answer.
+**Fan-out.** Launch one subagent per family in a single message so they run in parallel. Give each an identical brief: the intent, which instruction files to read, the diff or how to get it, the Rules section above verbatim, and the four moves; then its family's properties with their questions, last. `General` has no properties: its brief carries the mechanisms table from `catalogue.md`, exclusions included. Ask for findings as: `file:line`, property, one-sentence defect, failure scenario, proposed severity, and the lines cited. An empty list is a valid answer.
 
 **Inline** (`--inline`, or a change under ~150 changed lines with at most one family beside `General`): ask the lenses yourself in sequence. Same questions, same output shape.
 

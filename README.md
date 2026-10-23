@@ -13,8 +13,8 @@ Tools for development with Claude Code.
 Copy a skill's directory into your personal or project skills directory:
 
 ```bash
-cp -r skills/lens-review ~/.claude/skills/        # every project
-cp -r skills/lens-review <repo>/.claude/skills/   # one project
+mkdir -p ~/.claude/skills && cp -r skills/lens-review ~/.claude/skills/              # every project
+mkdir -p <repo>/.claude/skills && cp -r skills/lens-review <repo>/.claude/skills/    # one project
 ```
 
 Then run `/lens-review [PR number | branch | path]`.
