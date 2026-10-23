@@ -1,0 +1,13 @@
+{
+  "name": "dev-tools",
+  "version": "0.1.0",
+  "description": "Skills for development with Claude Code: property-lens code review and pull requests that explain why.",
+  "author": {
+    "name": "Daniel Little",
+    "url": "https://github.com/daniellittledev"
+  },
+  "homepage": "https://github.com/daniellittledev/dev-tools",
+  "repository": "https://github.com/daniellittledev/dev-tools",
+  "license": "MIT",
+  "keywords": ["code-review", "pull-request", "skills"]
+}
