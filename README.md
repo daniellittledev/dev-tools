@@ -11,7 +11,15 @@ Tools for development with Claude Code.
 
 ### Install
 
-Copy a skill's directory into your personal or project skills directory:
+As a plugin, which installs every skill and keeps them updated:
+
+```
+/plugin install dev-tools --marketplace daniellittledev/dev-tools
+```
+
+Then run `/dev-tools:lens-review [PR number | branch | path]` or `/dev-tools:pr [base branch]`.
+
+Or copy a single skill's directory into your personal or project skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills && cp -r skills/<skill> ~/.claude/skills/              # every project

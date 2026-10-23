@@ -1,0 +1,14 @@
+{
+  "name": "dev-tools",
+  "owner": {
+    "name": "Daniel Little",
+    "url": "https://github.com/daniellittledev"
+  },
+  "plugins": [
+    {
+      "name": "dev-tools",
+      "source": "./",
+      "description": "Skills for development with Claude Code: property-lens code review and pull requests that explain why."
+    }
+  ]
+}
