@@ -6,7 +6,7 @@ Tools for development with Claude Code.
 
 | Skill | What it does |
 |---|---|
-| [`lens-review`](skills/lens-review/SKILL.md) | Property-lens code review. Reads the PR's intent, picks a General lens plus up to three families from a fixed [catalogue](skills/lens-review/catalogue.md) of 62 properties, reviews through each, verifies every finding against the code it cites, and reports only what survives. |
+| [`lens-review`](skills/lens-review/SKILL.md) | Property-lens code review. Reads the PR's intent, picks a General lens plus up to three families from a fixed [catalogue](skills/lens-review/catalogue.md) of 62 properties, reviews through each with design first (tracing symptoms back to their design cause and proposing the improvement), verifies every finding against the code it cites, and reports only what survives. |
 
 ### Install
 
