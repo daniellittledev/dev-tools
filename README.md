@@ -27,3 +27,18 @@ mkdir -p <repo>/.claude/skills && cp -r skills/<skill> <repo>/.claude/skills/   
 ```
 
 Then run `/lens-review [PR number | branch | path]` or `/pr [base branch]`.
+
+## Templates
+
+| Template | What it is |
+|---|---|
+| [`AGENTS.md`](templates/AGENTS.md) | General user level preferences for coding agents: brevity, functional style, self-documenting code, and commit and PR conventions. |
+
+### Install
+
+Claude Code reads user level instructions from `~/.claude/CLAUDE.md`, Codex from `~/.codex/AGENTS.md`:
+
+```bash
+mkdir -p ~/.claude && cp templates/AGENTS.md ~/.claude/CLAUDE.md
+mkdir -p ~/.codex && cp templates/AGENTS.md ~/.codex/AGENTS.md
+```
